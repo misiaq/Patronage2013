@@ -17,9 +17,11 @@ na ubuntu mo¿emy to uczyniæ komend¹: sudo apt-get install maven
 Po kompilacji oraz odpaleniu serwera wpisujemy w przegl¹darce:
 http://localhost:8080/api/hello?param=Willson
 
-Teraz mo¿emy siê cieszyæ komunikatem w formacie JSON, który przypomina tego, kogo wska¿emu mu jako parametr :)
+Teraz mo¿emy siê cieszyæ komunikatem w formacie JSON, 
+który przypomina tego, kogo wska¿emu mu jako parametr :)
 
-Dodatkowo, je¿eli mamy zainstalowany serwer Tomcat, to projekt powinien odpalic siê po wpisaniu polecenia: 
+Dodatkowo, je¿eli mamy zainstalowany serwer Tomcat, 
+to projekt powinien odpalic siê po wpisaniu polecenia: 
 	mvn clean package tomcat:run
 
 	
