@@ -1,4 +1,4 @@
 Patronage2013
 =============
 
-zadanie   jestw branch zad2
+zadanie jest w branch ==> zad2
