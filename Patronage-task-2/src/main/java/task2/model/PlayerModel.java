@@ -64,7 +64,7 @@ public class PlayerModel {
      * tutaj reszta bedzie
      * 
      * */
-
+/*
     public Date getDate() {
         return date;
     }
@@ -72,5 +72,5 @@ public class PlayerModel {
     public void setDate(Date date) {
         this.date = date;
     }
-	
+	*/
 }
