@@ -33,14 +33,18 @@ public class JSONController {
             produces = { MediaType.APPLICATION_JSON_VALUE }
     )
 	
-    public @ResponseBody PlayerModel create(@RequestBody PlayerModel player) {
-     
-        PlayerModel newPlayer = playerService.create(player);
-
-        // Add some code...
-
-        return newPlayer;
+    public @ResponseBody String create(@RequestBody PlayerModel player) {
+		return playerService.create(player);
     }
+	
+    @RequestMapping(value = "/players/{playerId}", method = RequestMethod.PUT,
+    consumes = { MediaType.APPLICATION_JSON_VALUE },
+    produces = { MediaType.APPLICATION_JSON_VALUE })
+    public @ResponseBody String update(@PathVariable String playerId, @RequestBody PlayerModel player) {
+    return playerService.update(Integer.parseInt(playerId), player);
+    }
+
+	
 	
     @Autowired
     public void setSimpleService(@Qualifier("playerService") PlayerService playerService) {

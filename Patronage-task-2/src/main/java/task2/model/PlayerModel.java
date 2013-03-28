@@ -4,9 +4,9 @@ import java.util.Date;
 
 public class PlayerModel {
 
-	private Long id;
 	private String username;
 	private String email;
+	private String message;
 /*	 	
   	private String gender;
 	private String phonenumber;
@@ -49,6 +49,14 @@ public class PlayerModel {
 
     public void setEmail(String email) {
         this.email = username;
+    }
+    
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     /*

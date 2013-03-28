@@ -1,6 +1,11 @@
 package task2.service;
 
+
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
+import java.util.List;
+
 
 import org.springframework.stereotype.Service;
 
@@ -13,23 +18,48 @@ import task2.model.PlayerModel;
 public class PlayerServiceImpl implements PlayerService{
 
 	
+	private static List<PlayerModel> playersList = new ArrayList<PlayerModel>();
+	
+	
 	@Override
-	public PlayerModel create(PlayerModel player){
+	public String create(PlayerModel player){
+		
+		Integer thisTimeListSize = playersList.size();
+		thisTimeListSize ++;
+		
+		Integer id = thisTimeListSize-1;
+		playersList.add(player);
+		
+		String message = "New player with id:" +id+ " was created successfully!";
+				
+		return message;
+		
+	/*	playersList.setUsername(username)
 		PlayerModel newPlayer = new PlayerModel();
-		newPlayer.setUsername(player.getUsername());
-		newPlayer.setEmail(player.getEmail());		
+		newPlayer.setUsername(playersList.getUsername());
+		newPlayer.setEmail(playersList.getEmail());		
 		newPlayer.setDate(new Date());
 		return newPlayer;
-		
+	*/	
 	}
+	
+
 
 	@Override
-	public PlayerModel update(PlayerModel player){
-		PlayerModel updatePlayer = new PlayerModel();
+	public String update(Integer id, PlayerModel player){
+		
+		playersList.set(id, player);
+		
+		String message = "Player with id:" +id+ " was updated successfully!";
+		
+		return message;		
+		
+	/*	PlayerModel updatePlayer = new PlayerModel();
 		updatePlayer.setUsername(player.getUsername());
 		updatePlayer.setEmail(player.getEmail());		
 		updatePlayer.setDate(new Date());
 		return updatePlayer;
+		*/
 	}
 	
 }
