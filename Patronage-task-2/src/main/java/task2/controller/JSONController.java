@@ -42,11 +42,11 @@ public class JSONController {
     		produces = { MediaType.APPLICATION_JSON_VALUE })
     
     public @ResponseBody String update(@PathVariable String playerId, @RequestBody PlayerModel player) {
-    
+    	
     	return playerService.update(Integer.parseInt(playerId), player);
     }
 
-	
+
 	
     @Autowired
     public void setSimpleService(@Qualifier("playerService") PlayerService playerService) {
