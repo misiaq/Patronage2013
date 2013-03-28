@@ -32,6 +32,7 @@ public class JSONController {
             consumes = { MediaType.APPLICATION_JSON_VALUE },
             produces = { MediaType.APPLICATION_JSON_VALUE }
     )
+	
     public @ResponseBody PlayerModel create(@RequestBody PlayerModel player) {
      
         PlayerModel newPlayer = playerService.create(player);
