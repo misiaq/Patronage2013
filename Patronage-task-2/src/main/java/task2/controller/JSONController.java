@@ -5,8 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
-import task2.HelloSomebody;
 import task2.model.PlayerModel;
+import task2.model.Message;
 import task2.service.PlayerService;
 
 
@@ -18,9 +18,9 @@ public class JSONController {
 
 	@RequestMapping(value="/hello/{param}", method = RequestMethod.GET)
 
-	public @ResponseBody HelloSomebody getShopInJSON(@PathVariable String param) {
+	public @ResponseBody Message getShopInJSON(@PathVariable String param) {
 
-		HelloSomebody somebody = new HelloSomebody();
+		Message somebody = new Message();
 		somebody.setMessage("Hello, "+param+"!");
 		
 		return somebody;
@@ -38,10 +38,12 @@ public class JSONController {
     }
 	
     @RequestMapping(value = "/players/{playerId}", method = RequestMethod.PUT,
-    consumes = { MediaType.APPLICATION_JSON_VALUE },
-    produces = { MediaType.APPLICATION_JSON_VALUE })
+    		consumes = { MediaType.APPLICATION_JSON_VALUE },
+    		produces = { MediaType.APPLICATION_JSON_VALUE })
+    
     public @ResponseBody String update(@PathVariable String playerId, @RequestBody PlayerModel player) {
-    return playerService.update(Integer.parseInt(playerId), player);
+    
+    	return playerService.update(Integer.parseInt(playerId), player);
     }
 
 	
