@@ -52,7 +52,8 @@ public class PlayerServiceImpl implements PlayerService{
 		
 		String message = "Player with id:" +id+ " was updated successfully!";
 		
-		return message;		
+		return message;	
+	
 		
 	/*	PlayerModel updatePlayer = new PlayerModel();
 		updatePlayer.setUsername(player.getUsername());
