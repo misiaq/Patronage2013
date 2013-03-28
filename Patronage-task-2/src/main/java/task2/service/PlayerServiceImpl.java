@@ -62,4 +62,23 @@ public class PlayerServiceImpl implements PlayerService{
 		*/
 	}
 	
+	@Override
+	public PlayerModel get(Integer id){	
+		return playersList.get(id); 
+	}
+	
+
+	public List<PlayerModel> playersList(){	
+		return playersList; 
+	}
+
+	@Override
+	public String delete(Integer id){
+		
+		playersList.remove(id);
+		
+		String message = "Player with id:" +id+ " was removed successfully!";
+		
+		return message;		
+	}
 }

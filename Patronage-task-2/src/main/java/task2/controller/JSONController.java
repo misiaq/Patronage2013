@@ -46,8 +46,35 @@ public class JSONController {
     	return playerService.update(Integer.parseInt(playerId), player);
     }
 
+    @RequestMapping(value = "/players/{playerId}", method = RequestMethod.GET,
+    		consumes = { MediaType.APPLICATION_JSON_VALUE },
+    		produces = { MediaType.APPLICATION_JSON_VALUE })
+    
+    public @ResponseBody PlayerModel get(@PathVariable String playerId) {
+    	
+    	return playerService.get(Integer.parseInt(playerId));
+    }	
 
-	
+    @RequestMapping(value = "/players", method = RequestMethod.GET,
+    		consumes = { MediaType.APPLICATION_JSON_VALUE },
+    		produces = { MediaType.APPLICATION_JSON_VALUE })
+    
+    public @ResponseBody PlayerModel playerList() {
+    	
+    	return playerList();
+    }	
+    
+    @RequestMapping(value = "/players/{playerId}", method = RequestMethod.DELETE,
+    		consumes = { MediaType.APPLICATION_JSON_VALUE },
+    		produces = { MediaType.APPLICATION_JSON_VALUE })
+    
+    public @ResponseBody String delete(@PathVariable String playerId) {
+    	
+    	return playerService.delete(Integer.parseInt(playerId));
+    }	
+    
+    
+    
     @Autowired
     public void setSimpleService(@Qualifier("playerService") PlayerService playerService) {
         this.playerService = playerService;

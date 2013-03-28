@@ -6,15 +6,15 @@ public class PlayerModel {
 
 	private String username;
 	private String email;
-	private String message;
-/*	 	
+/*	private String message;
+	 	
   	private String gender;
 	private String phonenumber;
 	private String phoneOS;
 	
-	*/
+	
 	private Date date;
-
+*/
 	public PlayerModel (){
 		
 	}
@@ -22,7 +22,7 @@ public class PlayerModel {
 	public PlayerModel(String username, String email){
 		this.username = username;
 		this.email = email;
-		this.date = new Date();
+	/*	this.date = new Date();*/
 	}
 /*	
 	public PlayerModel(String username, String email, String gender, String phonenumber, String phoneOS){
@@ -51,14 +51,14 @@ public class PlayerModel {
         this.email = username;
     }
     
-    public String getMessage() {
+  /*  public String getMessage() {
         return message;
     }
 
     public void setMessage(String message) {
         this.message = message;
     }
-
+*/
     /*
      * 
      * tutaj reszta bedzie
