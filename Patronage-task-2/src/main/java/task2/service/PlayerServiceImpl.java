@@ -52,11 +52,16 @@ public class PlayerServiceImpl implements PlayerService{
 		
 			playersList.set(id, player);
 			
+			PlayerModel updatingPlayer = playersList.get(id);
+			
+			updatingPlayer.setUsername(player.getUsername());
+			updatingPlayer.setEmail(player.getEmail());			
+			
 			message = "Player with id:" +id+ " was updated successfully!";
 		
 		}	
 		else{
-			message = "Player with id:" +id+ "does not exist!";			
+			message = "ERORR!!! Player with id:" +id+ " does not exist!";			
 		}
 			
 
@@ -74,21 +79,41 @@ public class PlayerServiceImpl implements PlayerService{
 	
 	@Override
 	public PlayerModel get(Integer id){	
+		String message;
+		if (id>=0 & id < playersList.size()){
+	
 		return playersList.get(id); 
+		}	
+		else{
+			message = "ERORR!!! Player with id:" +id+ " does not exist!";			
+			return null;
+		}
+		
 	}
 	
 	@Override
 	public List<PlayerModel> playersList(){	
+		String message;
+		if (playersList.size()>1){
 		return playersList; 
+		}
+		else{
+			message = "ERORR!!! O players exist!";			
+			return null;
+		}
+		
 	}
 
 	@Override
 	public String delete(Integer id){
-		
-		playersList.remove(id);
-		
-		String message = "Player with id:" +id+ " was removed successfully!";
-		
+		String message;
+		if (id>=0 & id < playersList.size()){
+			playersList.remove(id);
+			message = "Player with id:" +id+ " was removed successfully!";
+		}
+		else{
+			message = "ERORR!!! Player with id:" +id+ " does not exist!";			
+		}
 		return message;		
 	}
 }
