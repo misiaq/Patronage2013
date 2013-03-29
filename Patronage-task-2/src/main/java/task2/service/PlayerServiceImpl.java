@@ -47,19 +47,10 @@ public class PlayerServiceImpl implements PlayerService{
 
 	@Override
 	public String update(Integer id, PlayerModel player){
-		String message;
-		if (id>=0 & id < playersList.size()){
 		
-			playersList.set(id, player);
-			
-			message = "Player with id:" +id+ " was updated successfully!";
+		playersList.set(id, player);
 		
-		}	
-		else{
-			message = "Player with id:" +id+ "does not exist!";			
-		}
-			
-
+		String message = "Player with id:" +id+ " was updated successfully!";
 		
 		return message;	
 	
@@ -77,7 +68,7 @@ public class PlayerServiceImpl implements PlayerService{
 		return playersList.get(id); 
 	}
 	
-	@Override
+
 	public List<PlayerModel> playersList(){	
 		return playersList; 
 	}
