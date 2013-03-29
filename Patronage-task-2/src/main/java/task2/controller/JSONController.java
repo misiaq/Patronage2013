@@ -1,5 +1,7 @@
 package task2.controller;
 
+import java.util.List;
+
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,9 +61,9 @@ public class JSONController {
     		consumes = { MediaType.APPLICATION_JSON_VALUE },
     		produces = { MediaType.APPLICATION_JSON_VALUE })
     
-    public @ResponseBody PlayerModel playerList() {
+    public @ResponseBody List<PlayerModel> playerList() {
     	
-    	return playerList();
+    	return playerService.playersList();
     }	
     
     @RequestMapping(value = "/players/{playerId}", method = RequestMethod.DELETE,
