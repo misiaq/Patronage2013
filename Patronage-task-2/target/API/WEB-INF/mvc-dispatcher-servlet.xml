@@ -10,6 +10,8 @@ xsi:schemaLocation="
 
 	<context:component-scan base-package="task2.controller" />
 	<context:component-scan base-package="task2.service" />
+	<context:component-scan base-package="task2.model" />
+	
 
 	<mvc:annotation-driven />
 
